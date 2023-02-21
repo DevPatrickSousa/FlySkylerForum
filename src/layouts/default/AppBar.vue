@@ -1,0 +1,42 @@
+<template>
+  <v-app-bar title="Logo/Home" class="text-white bg-grey-darken-4" :elevation="0" flat >
+      
+    <v-menu>
+      <template v-slot:activator="{ props }">
+        <v-btn
+          color="primary"
+          v-bind="props"
+          icon
+        >
+        <v-icon>mdi-format-list-bulleted-square</v-icon>
+        </v-btn>
+      </template>
+      <v-list>
+        <v-list-item
+          v-for="(item, index) in items"
+          :key="index"
+          :value="index"
+        >
+          <v-list-item-title>{{ item.title }}</v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-menu>
+    </v-app-bar>
+
+    <v-footer class="d-flex justify-center bg-grey-darken-4" app absolute >
+      <span class="text-white">FLYSKYLER FORUM © {{ new Date().getFullYear() }}. </span>
+    </v-footer>
+</template>
+
+<script>
+  export default {
+    data: () => ({
+      items: [
+        { title: 'Click Me' },
+        { title: 'Click Me' },
+        { title: 'Click Me' },
+        { title: 'Click Me 2' },
+      ],
+    }),
+  }
+</script>
