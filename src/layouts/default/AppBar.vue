@@ -16,8 +16,9 @@
           v-for="(item, index) in items"
           :key="index"
           :value="index"
+          @click="handleClick(index)"
         >
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
+          <v-list-item-title >{{ item.title }}</v-list-item-title>
         </v-list-item>
       </v-list>
     </v-menu>
@@ -32,11 +33,20 @@
   export default {
     data: () => ({
       items: [
-        { title: 'Click Me' },
+      { 
+        title: 'Back to home',
+        click() {
+          this.$router.push('/');
+        }},
         { title: 'Click Me' },
         { title: 'Click Me' },
         { title: 'Click Me 2' },
       ],
     }),
+    methods: {
+    handleClick(index) {
+      this.items[index].click.call(this)
+    }
+  }
   }
 </script>

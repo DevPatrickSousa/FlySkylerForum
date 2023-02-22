@@ -1,12 +1,13 @@
 <template>
   <v-app>
     <menuComponent/>
-    <Read/>
+    <updatePost/>
   </v-app>
   </template>
   
   <script setup>
     import menuComponent from '@/components/menuComponent.vue';
-    import Read from '@/components/Read.vue'
+    import updatePost from '@/components/updatePost.vue'
   </script>
   
+

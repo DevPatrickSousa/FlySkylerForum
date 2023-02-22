@@ -17,18 +17,16 @@
           
         </template>
 
-        <v-list-item
-            v-for="post in posts" :key="post.id"
-            
-            
-            
-          >{{ post.title }}</v-list-item>
+        <v-list-item v-for="post in posts" :key="post.id">
+            {{ post.title }}
+        </v-list-item>
         </v-list-group>
         
         <v-list-group value="Actions">
           <template v-slot:activator="{ props }">
             <v-list-item
               v-bind="props"
+              prepend-icon="mdi-tools"
               title="Posts actions"
             ></v-list-item>
           </template>
@@ -60,7 +58,6 @@
         <div class="d-flex justify-center text-center pt-2" id="createPost" style="height: 500px;">
           <div class="d-flex justify-center align-center text-center ">
             <v-card variant="outlined" style="height: 440px; width: 900px;">
-              
             <Create/>
             </v-card>
           </div>

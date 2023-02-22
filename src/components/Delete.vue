@@ -1,8 +1,44 @@
 <template>
-    <h1>Delete</h1>
+    <div class="d-flex justify-center align-center">
+        <h1>Delete</h1>
+    </div>
+    
+
+    <v-list-item v-for="userPosts in posts" :key="userPosts.id">
+            {{ userPosts.title }}
+            <v-btn :to="{path: `/deletePost/${userPosts.id}`}" variant="outlined">Select
+            </v-btn>
+    </v-list-item>
+    
 </template>
 
-<script setup>
+<script>
+import postsCollectionRef from '../firebase';
+import { getDocs } from '@firebase/firestore';
+export default{
+    data(){
+        return{
+            posts:[],
+    }
+    },
+    methods:{
+    async fetchPosts(){
+          let postsSnapShot = await getDocs(postsCollectionRef);
+          let posts = [];
+          postsSnapShot.forEach(post=>{
+            let postData = post.data();
+            postData.id = post.id;
+            posts.push(postData)
+          })
+          console.log(posts)
+          this.posts = posts;
+      }
+    },
+    created(){
+      this.fetchPosts();
+    }
+}
+
 
 </script>
 

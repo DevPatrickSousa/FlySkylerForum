@@ -4,6 +4,9 @@ import Create from '@/views/Create'
 import Read from '@/views/Read'
 import Update from '@/views/Update'
 import Delete from '@/views/Delete'
+import updatePost from '@/views/updatePost'
+import deletePost from '@/views/deletePost'
+
 const routes = [
   {
     path: '/',
@@ -38,9 +41,21 @@ const routes = [
 
   }, 
   {
+    path: '/updatePost/:postid',
+    name:'updatePost',
+    component: updatePost,
+
+  },
+  {
     path: '/delete',
     name:'delete',
     component: Delete,
+
+  }, 
+  {
+    path: '/deletePost/:postid',
+    name:'deletePost',
+    component: deletePost,
 
   }, 
 ]

@@ -27,11 +27,16 @@
         
       ></v-text-field>
       
-  <v-file-input accept="image/*" ref="myFile" label="File input" clearable  @change="clickImagem($event)">
+  <v-file-input  accept="image/*" ref="storageRef" label="File input" clearable  @change="clickImage($event)">
 
   </v-file-input>
 
-      <v-btn type="submit" id="submitButton" block class="">Post</v-btn>
+      <v-btn type="submit" id="submitButton" block class="" @click="snackbar = true" color="blue">
+        Post
+        <v-snackbar v-model="snackbar" color="success">
+      <span class="d-flex justify-center">Post successfully sent!</span> 
+        </v-snackbar>
+      </v-btn>
     </v-form>
             
             
@@ -43,8 +48,8 @@
 import useVuelidate from '@vuelidate/core'
 import { required } from '@vuelidate/validators'*/
 import postsCollectionRef from '../firebase';
-import {storage} from '../firebase';
-import {ref, uploadBytes} from "firebase/storage";
+
+import { getStorage, ref, uploadBytes } from "firebase/storage";
 import {addDoc} from 'firebase/firestore';
 
 
@@ -56,6 +61,7 @@ import {addDoc} from 'firebase/firestore';
     email: null,
     title: null,
     text: null,
+    snackbar: false,
    /* v$: useVuelidate(),*/
     }},
     
@@ -64,20 +70,19 @@ import {addDoc} from 'firebase/firestore';
         console.log('Creating Post.');
         const addedDoc = await addDoc(postsCollectionRef, this.$data);
         console.log(addedDoc);
-
+        
         },
-      clickImagem(e){
+      clickImage(e){
         this.file = e.target.files[0];
         console.log(this.file);
       },
-      uploadImage(){
-        const storageRef = ref(storage, 'folder/myFile.jpg');
-        uploadBytes(storageRef,this.$refs.myFile.files[0]).then(
-            (snapshot)=>{
-                console.log("uploaded");
-            }
-        )
-      },
+      uploadImage() {
+        const storage = getStorage();
+        const storageRef = ref(storage, 'postImages/' + this.file.name + ' ' + '-' + ' ' + this.title);
+        uploadBytes(storageRef, this.file).then((snapshot) => {
+        console.log('Uploaded!');
+        });
+},
       sendForm(){
         
             /*this.v$.$validate()
@@ -85,6 +90,10 @@ import {addDoc} from 'firebase/firestore';
 
                 this.createPost();
                 this.uploadImage();
+                setTimeout(() => {
+                  window.location.reload();
+                }, 2000);
+                
                 
             /*}else{
                 console.log('erro')
@@ -106,6 +115,7 @@ import {addDoc} from 'firebase/firestore';
   }*/
     }
 </script>
+
 
 <style>
 
