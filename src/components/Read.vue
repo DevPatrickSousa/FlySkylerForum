@@ -1,12 +1,23 @@
 <template>
-    <div class="d-flex justify-center align-center">
+    <v-responsive class="d-flex fill-height ">
+    <div class="d-flex justify-center mt-16">
         <h1>Read</h1>
     </div>
     
-    <v-list lines="one"> 
-        
+     
+
+        <v-container class=" bg-surface-variant mb-6">
+      
+            <v-list lines="two">
+                <v-row
+        align="start"
+        no-gutters
+        style="height: 500px; "
+      >
+                
     <v-list-item v-for="userPosts in posts" :key="userPosts.id">
-        <v-card variant="outlined">
+        <v-col cols="5">
+        <v-card variant="outlined" style="width: 500px;">
             Name:{{ userPosts.name }}
             <br>
             E-mail:{{ userPosts.email }}
@@ -15,10 +26,20 @@
             <br>
             Text:{{ userPosts.text }}
         </v-card>
+    </v-col>
     </v-list-item>
 
+</v-row>
 </v-list>
-   
+          
+        
+      
+    </v-container>
+
+    
+    
+
+</v-responsive>
 </template>
 
 <script>
