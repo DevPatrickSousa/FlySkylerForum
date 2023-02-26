@@ -129,8 +129,6 @@ import {addDoc } from 'firebase/firestore';
         console.log('Creating Post.');
         const addedDoc = await addDoc(postsCollectionRef, this.formData);
         console.log(addedDoc);
-        
-        
         },
       clickImage(e){
         this.file = e.target.files[0];

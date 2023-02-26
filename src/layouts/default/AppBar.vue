@@ -8,7 +8,7 @@
           v-bind="props"
           icon
         >
-        <v-icon>mdi-format-list-bulleted-square</v-icon>
+        <v-icon icon="mdi-menu"></v-icon>
         </v-btn>
       </template>
       <v-list>
