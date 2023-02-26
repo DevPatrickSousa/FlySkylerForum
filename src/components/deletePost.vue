@@ -1,9 +1,13 @@
 <template>
-    <div class="d-flex justify-center text-center">
-        <h1>Delete Post</h1>
+  <v-responsive class="d-flex justify-center align-center text-center fill-height bg-grey-darken-4">
+  <v-container class="fill-height d-flex justify-center ">
+      
+      <v-card variant="outlined" width="400" class="">
+    <div class="d-flex justify-center text-center" >
+        <h1>DELETE</h1>
     </div>
     
-    <v-form fast-fail @submit.prevent="deletePost(postId)">
+      <v-form fast-fail @submit.prevent="deletePost(postId)">
       <v-text-field
         v-model="postInfo.name"
         label="Name"
@@ -41,11 +45,13 @@
       </v-btn>
     </v-form>
 
+   
+    
 
-
-
-
-
+  </v-card>
+</v-container>
+  </v-responsive>
+  
 </template>
 
 
@@ -61,6 +67,7 @@ export default{
             docRef: null,
             snackbar: false,
             postInfo:{
+            id: null,
             name: null,
             email: null,
             title: null,
@@ -75,6 +82,7 @@ export default{
             this.docRef = postRef;
             let post = await getDoc(this.docRef);
             let postData = post.data();
+            this.postInfo.id = postData.id;
             this.postInfo.name = postData.name;
             this.postInfo.email = postData.email;
             this.postInfo.title = postData.title;

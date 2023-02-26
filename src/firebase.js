@@ -19,3 +19,9 @@ const postsCollectionRef = collection(db, 'posts');
 const storage = getStorage(app);
 export default postsCollectionRef;
 export {storage}
+
+
+
+
+
+

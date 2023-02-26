@@ -1,14 +1,24 @@
 <template>
-    <div class="d-flex justify-center align-center">
-        <h1>Update</h1>
-    </div>
-    
-
+    <v-responsive class="d-flex justify-center align-center text-center fill-height bg-grey-darken-4">
+  <v-container class="fill-height d-flex justify-center ">
+      
+      <v-card variant="outlined" width="400" class="">
+        
+        <div class="d-flex justify-center text-center"  >
+        <span id="updatePostSpan">Choose the post that you want to <strong>update</strong>.</span>
+      </div>
+        <div class="d-flex flex-column justify-center text-center bg-brown-darken-4">
     <v-list-item v-for="userPosts in posts" :key="userPosts.id">
             {{ userPosts.title }}
-            <v-btn :to="{path: `/updatePost/${userPosts.id}`}" variant="outlined">Select</v-btn>
+            <br>
+            <v-btn :to="{path: `/update/${userPosts.id}`}" variant="outlined">Select</v-btn>
     </v-list-item>
-    
+  </div>
+</v-card>
+</v-container>
+  </v-responsive>
+
+  
 </template>
 
 <script>
@@ -42,5 +52,7 @@ export default{
 </script>
 
 <style>
-
+#updatePostSpan{
+  font-size: 20px;
+}
 </style>

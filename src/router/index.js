@@ -1,7 +1,7 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
-import Create from '@/views/Create'
-import Read from '@/views/Read'
+
+
 import Update from '@/views/Update'
 import Delete from '@/views/Delete'
 import updatePost from '@/views/updatePost'
@@ -22,18 +22,7 @@ const routes = [
       },
     ],
   },
-  {
-    path: '/create',
-    name:'create',
-    component: Create,
-
-  }, 
-  {
-    path: '/read',
-    name:'read',
-    component: Read,
-
-  }, 
+  
   {
     path: '/update',
     name:'update',
@@ -41,8 +30,8 @@ const routes = [
 
   }, 
   {
-    path: '/updatePost/:postid',
-    name:'updatePost',
+    path: '/update/:postid',
+    name:'updateId',
     component: updatePost,
 
   },
@@ -53,8 +42,8 @@ const routes = [
 
   }, 
   {
-    path: '/deletePost/:postid',
-    name:'deletePost',
+    path: '/delete/:postid',
+    name:'deleteId',
     component: deletePost,
 
   }, 

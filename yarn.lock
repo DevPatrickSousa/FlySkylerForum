@@ -544,7 +544,7 @@
 
 "@vee-validate/rules@^4.7.4":
   version "4.7.4"
-  resolved "https://registry.yarnpkg.com/@vee-validate/rules/-/rules-4.7.4.tgz#fca175f11ae4ce33e46d513b12feca94164b871f"
+  resolved "https://registry.npmjs.org/@vee-validate/rules/-/rules-4.7.4.tgz"
   integrity sha512-rWpmGKB/jy7/jbuAH/pfCYoCjiYDx77geNEaYeTl07eHo+2jL+j802Ttn85cTJsMUeXzRSUauepvNCpkVWV+aA==
 
 "@vitejs/plugin-vue@^3.0.3":
@@ -649,14 +649,14 @@
 
 "@vuelidate/core@^2.0.0":
   version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@vuelidate/core/-/core-2.0.0.tgz#dfe73ba3f997646e07bd4da4f327fe53c29782cb"
+  resolved "https://registry.npmjs.org/@vuelidate/core/-/core-2.0.0.tgz"
   integrity sha512-xIFgdQlScO0aaSZ0wTGPJh8YcTMNAj5veI8yPgiAyxOT+GV7vNQFiU1vpYWCL4cklkkhYvRRSC2OEX7YOZNmPQ==
   dependencies:
     vue-demi "^0.13.11"
 
 "@vuelidate/validators@^2.0.0":
   version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@vuelidate/validators/-/validators-2.0.0.tgz#1ddd86c6c81b2cfbb5720961e951cc53ec0a80be"
+  resolved "https://registry.npmjs.org/@vuelidate/validators/-/validators-2.0.0.tgz"
   integrity sha512-fQQcmDWfz7pyH5/JPi0Ng2GEgNK1pUHn/Z/j5rG/Q+HwhgIXvJblTPcZwKOj1ABL7V4UVuGKECvZCDHNGOwdrg==
   dependencies:
     vue-demi "^0.13.11"
@@ -845,6 +845,11 @@ doctrine@^3.0.0:
   integrity sha512-yS+Q5i3hBf7GBkd4KG8a7eBNNWNGLTaEwwYWUijIYM7zrlYDM0BFXHjjPWlWZ1Rg7UaddZeIDmi9jF3HmqiQ2w==
   dependencies:
     esutils "^2.0.2"
+
+dotenv@^16.0.3:
+  version "16.0.3"
+  resolved "https://registry.npmjs.org/dotenv/-/dotenv-16.0.3.tgz"
+  integrity sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==
 
 emoji-regex@^8.0.0:
   version "8.0.0"
@@ -1946,7 +1951,7 @@ vue@^3.2.13:
 
 vuelidate@^0.7.7:
   version "0.7.7"
-  resolved "https://registry.yarnpkg.com/vuelidate/-/vuelidate-0.7.7.tgz#5df3930a63ddecf56fde7bdacea9dbaf0c9bf899"
+  resolved "https://registry.npmjs.org/vuelidate/-/vuelidate-0.7.7.tgz"
   integrity sha512-pT/U2lDI67wkIqI4tum7cMSIfGcAMfB+Phtqh2ttdXURwvHRBJEAQ0tVbUsW9Upg83Q5QH59bnCoXI7A9JDGnA==
 
 vuetify@^3.0.0:

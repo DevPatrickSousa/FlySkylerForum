@@ -1,6 +1,10 @@
 <template>
-    <div class="d-flex justify-center text-center">
-        <h1>Update Post</h1>
+    <v-responsive class="d-flex justify-center align-center text-center fill-height bg-grey-darken-4">
+  <v-container class="fill-height d-flex justify-center ">
+      
+      <v-card variant="outlined" width="400" class="">
+    <div class="d-flex justify-center text-center" >
+        <h1>UPDATE</h1>
     </div>
     
     <v-form fast-fail @submit.prevent="updatePost">
@@ -33,11 +37,13 @@
 
   </v-file-input>
 
-      <v-btn type="submit" id="submitButton" block class="">Post</v-btn>
+      <v-btn type="submit" id="submitButton" block color="blue">Update</v-btn>
     </v-form>
 
 
-
+</v-card>
+</v-container>
+</v-responsive>
 
 
 

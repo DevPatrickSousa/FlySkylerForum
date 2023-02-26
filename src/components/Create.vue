@@ -8,7 +8,7 @@
         v-model="formData.name"
         label="Name"
         :rules="nameRules"
-        :counter="10"
+        :counter="20"
       ></v-text-field>
 
       <v-text-field
@@ -22,7 +22,7 @@
         v-model="formData.title"
         label="Title"
         :rules="titleRules"
-        :counter="25"
+        :counter="35"
       ></v-text-field>
 
       <v-text-field
@@ -37,17 +37,19 @@
 
   </v-file-input>
 
-      <v-btn type="submit" id="submitButton" block class="" @click="snackbar = true" color="blue" >
+      <v-btn type="submit"  block class="" color="brown-darken-4" >
         Post
         <v-snackbar v-model="snackbar" color="success">
       <span class="d-flex justify-center">Post successfully sent!</span> 
         </v-snackbar>
       </v-btn>
     </v-form>
+    
             
   </v-responsive> 
+  
   </v-container>
-    
+  
 </template>
 
 
@@ -80,9 +82,9 @@ import {addDoc } from 'firebase/firestore';
           return 'Name is required.'
         },
         value => {
-          if (value?.length <= 10) return true
+          if (value?.length <= 20) return true
 
-          return 'Name must be less than 10 characters.'
+          return 'Name must be less than 20 characters.'
         },
       ],
     emailRules: [
@@ -103,9 +105,9 @@ import {addDoc } from 'firebase/firestore';
           return 'Title is required.'
         },
         value => {
-          if (value?.length <= 10) return true
+          if (value?.length <= 35) return true
 
-          return 'Title must be less than 25 characters.'
+          return 'Title must be less than 35 characters.'
         },
       ],
       textRules: [
@@ -114,7 +116,7 @@ import {addDoc } from 'firebase/firestore';
           return 'Text is required.'
         },
         value => {
-          if (value?.length <= 10) return true
+          if (value?.length <= 500) return true
 
           return 'Text must be less than 500 characters.'
         },
@@ -153,6 +155,7 @@ import {addDoc } from 'firebase/firestore';
                 if(valid)
                 this.createPost();
                 this.uploadImage();
+                this.snackbar = true;
                 setTimeout(() => {
                   window.location.reload();
                 }, 2000);

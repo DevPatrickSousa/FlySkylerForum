@@ -33,15 +33,23 @@
     export default {
       data: () => ({
         items: [
-        { 
+      { 
         title: 'Back to home',
         click() {
           this.$router.push('/');
         }},
-          { title: 'Click Me' },
-          { title: 'Click Me' },
-          { title: 'Click Me 2' },
-        ],
+        { title: 'Update',
+        click() {
+          this.$router.push('/update');
+        }
+       },
+       
+       { title: 'Delete',
+        click() {
+          this.$router.push('/delete');
+        }
+       },
+      ],
       }),
       methods: {
     handleClick(index) {
